@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,44 +6,44 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+  
     <div class="container">
       <div>
-        <h1 class="header_text">Do you wanna go out with me tomorrow?</h1>
+        <h1 class="header_text">Check compatibility A.R</h1>
       </div>
-     
+      <b><p id="displayText"></p></b>
       <div class="gif_container">
         <img
-          src="https://i.postimg.cc/pdNqPxx1/milk-and-mocha-cute.gif"
+        id="gifImage"
+          src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/milk-n-mocha-1/sticker_3.gif?3b0113a9484ddf2a389e6bdf5c69c2fa"
           alt="Cute animated illustration"
         />
       </div>
       <div class="buttons">
-        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button class="btn" id="yesButton" onclick="nextPage()" style="display: none;">next</button>
         <button
           class="btn"
           id="noButton"
-          onmouseover="moveButton()"
           onclick="moveButton()"
+          style="display: block;"
         >
-          No
+          Check Compatibility
         </button>
-
+       
         <script>
           async function nextPage() {
-            window.location.href = "yes.html";
+            window.location.href = "date.html";
           }
 
           function moveButton() {
-            var x =
-              Math.random() *
-              (window.innerWidth -
-                document.getElementById("noButton").offsetWidth);
-            var y =
-              Math.random() *
-              (window.innerHeight -
-                document.getElementById("noButton").offsetHeight);
-            document.getElementById("noButton").style.left = `${x}px`;
-            document.getElementById("noButton").style.top = `${y}px`;
+            document.getElementById("displayText").innerHTML = `you are 100% compatible`;
+            const element = document.getElementById("yesButton")
+            element.style.display = "block"
+            const element1 = document.getElementById("noButton")
+            element1.style.display = "none"
+            const gif = document.getElementById("gifImage")
+            const url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXkiL4HqOf-B0cgqilQnu0Cu-tbh6CepOXmA&usqp=CAU"
+            gif.setAttribute("src" , url)
           }
         </script>
       </div>
